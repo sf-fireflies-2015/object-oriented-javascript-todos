@@ -14,27 +14,19 @@ function TodoList(){
   this.tasks =[];
   this.add = function(task_given) {
      var new_task = new Task(task_given);
-     (this.tasks).push(new_task);
+     this.tasks.push(new_task);
   };
   // console.log each task
   this.list = function(){
-    task_array = (this.tasks);
-    for (var i = 0; i < task_array.length; i++) {
-      console.log(task_array[i]);
+    for (var i = 0; i < this.tasks.length; i++) {
+      console.log(this.tasks[i]);
     };
   };
   this.remove = function(item){
-    to_remove = item.indexOf;
-    this.tasks.splice(to_remove, 1);
-  }
-  
-  
+    this.tasks.splice(item.indexOf, 1);
+  } 
 }
   
-
-
-
-
 // Note we are using a JavaScript constructor now.
 var groceryList = new TodoList();
 groceryList.add('bread');
